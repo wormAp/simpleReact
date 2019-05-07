@@ -63,6 +63,6 @@ render(<div>
     <div>this is a test3</div>
     <div>{new Date().toLocaleTimeString()}</div>
     <MyTest test={"哈哈我是一个标题"}></MyTest>
-    <MyTest2 outNumber={2} test={"哈哈我是一个标题2"}></MyTest2>
     <MyTest3></MyTest3>
+    <MyTest2 outNumber={2} test={"哈哈我是一个标题2"}></MyTest2>
 </div>,document.getElementById("root"));
