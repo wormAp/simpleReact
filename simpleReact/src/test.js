@@ -52,6 +52,11 @@ class MyTest2 extends ReactClass{
         );
     }
 }
+function MyTest3() {
+    return(
+        <div>function react</div>
+    );
+}
 render(<div>
     <div className="ttttt">this is a test</div>
     <div style={{color:"#ddd"}}>this is a test2</div>
@@ -59,4 +64,5 @@ render(<div>
     <div>{new Date().toLocaleTimeString()}</div>
     <MyTest test={"哈哈我是一个标题"}></MyTest>
     <MyTest2 outNumber={2} test={"哈哈我是一个标题2"}></MyTest2>
+    <MyTest3></MyTest3>
 </div>,document.getElementById("root"));

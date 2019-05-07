@@ -11,9 +11,15 @@ function _render(vnodes) {
         dom = document.createElement(vnodes.type);
         utils.setAttribute(dom,vnodes.props);
     }else if(utils.isFunction(vnodes.type)){
-        var ins = new vnodes.type(vnodes.props);
-        ins._render = _renderComponent;
-        dom = _renderComponent(ins);
+        if(vnodes.type.prototype.render){
+            var ins = new vnodes.type(vnodes.props);
+            ins._render = _renderComponent;
+            dom = _renderComponent(ins);
+        }else{
+            var ins = vnodes.type(vnodes.props);
+            dom =_render(ins);
+        }
+
     }
     vnodes.children && vnodes.children.forEach((_vnodes)=>{
        let temp =  _render(_vnodes)
